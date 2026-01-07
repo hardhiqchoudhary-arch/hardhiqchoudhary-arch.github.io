@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardhiq Choudhary - Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero h1 strong {
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: background 0.3s;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            color: #999;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .skill-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Projects Section */
+        .project {
+            margin-bottom: 100px;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .project-info h3 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .project-info p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            border: 1px solid #e0e0e0;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .project-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .project-link:hover {
+            opacity: 0.6;
+        }
+
+        .project-image {
+            background: #f5f5f5;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .contact-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .about-content,
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">HC</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hi, I'm <strong>Hardhiq Choudhary</strong><br>Computer Science Graduate Student</h1>
+            <p>MS CS at George Washington University | Ex-Senior Analyst at AON | Building innovative solutions with Python, Swift, and data analytics</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">About Me</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Developer & Data Analyst</h2>
+                    <p>Currently pursuing MS in Computer Science at George Washington University (2025-2027), with over 3 years of experience as a Senior Configuration Analyst at AON Consulting.</p>
+                    <p>I specialize in building data-driven solutions, optimizing ETL pipelines, and creating user-focused applications. Passionate about leveraging technology to solve real-world problems.</p>
+                    <p>Seeking Summer 2026 internships in Data Analytics, Software Engineering, and related fields.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">
+                        <h3>Languages</h3>
+                        <p>Python, SQL, Swift, Java</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Data & ML</h3>
+                        <p>pandas, scikit-learn, SQL Server, Power BI, Tableau</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Development</h3>
+                        <p>SwiftUI, Firebase, Flask, Git, REST APIs</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Tools</h3>
+                        <p>VS Code, Jupyter, PostgreSQL, SSIS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">Selected Projects</div>
+            
+            <div class="project">
+                <div class="project-content">
+                    <div class="project-info">
+                        <h3>OurNews - iOS Social News App</h3>
+                        <p>Comprehensive iOS social news application built with SwiftUI featuring user profiles, real-time updates, article sharing, and group functionality with Firebase backend integration.</p>
+                        <div class="project-tags">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">iOS</span>
+                            <span class="tag">Real-Time</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hardhiqchoudhary-arch/OurNews-iOS" class="project-link" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-image">📱</div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-content">
+                    <div class="project-info">
+                        <h3>ETL Pipeline Optimization</h3>
+                        <p>Led optimization of healthcare data processing pipeline at AON, achieving 90% runtime improvement on 4,400+ reports. Implemented automated validation systems reducing errors by 85%.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">SSIS</span>
+                            <span class="tag">Power BI</span>
+                        </div>
+                    </div>
+                    <div class="project-image">📊</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">Get In Touch</div>
+            <div class="contact-content">
+                <h2>Let's Work Together</h2>
+                <p>I'm currently seeking Summer 2026 internship opportunities in Data Analytics and Software Engineering. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:hardhiq.choudhary@gwmail.gwu.edu" class="contact-link">Email</a>
+                    <a href="https://linkedin.com/in/hardhiq-choudhary" class="contact-link" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/hardhiqchoudhary-arch" class="contact-link" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Hardhiq Choudhary. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
