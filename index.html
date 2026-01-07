@@ -24,7 +24,6 @@
             padding: 0 40px;
         }
 
-        /* Header */
         header {
             padding: 40px 0;
             border-bottom: 1px solid #e0e0e0;
@@ -61,7 +60,6 @@
             opacity: 0.6;
         }
 
-        /* Hero Section */
         .hero {
             padding: 120px 0;
             min-height: 80vh;
@@ -99,13 +97,24 @@
             font-size: 12px;
             transition: background 0.3s;
             border: none;
+            margin-right: 20px;
+            margin-bottom: 10px;
         }
 
         .cta-button:hover {
             background: #333;
         }
 
-        /* Section Styles */
+        .cta-button.secondary {
+            background: #fff;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .cta-button.secondary:hover {
+            background: #f5f5f5;
+        }
+
         section {
             padding: 100px 0;
             border-top: 1px solid #e0e0e0;
@@ -122,8 +131,15 @@
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 300px 1fr;
             gap: 80px;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
         }
 
         .about-text h2 {
@@ -144,6 +160,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+            margin-top: 40px;
         }
 
         .skill-item {
@@ -162,6 +179,66 @@
         .skill-item p {
             font-size: 14px;
             color: #999;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .experience-header h3 {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .experience-header .date {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .company-role {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-item li {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-item li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
         }
 
         /* Projects Section */
@@ -212,6 +289,7 @@
         .project-links {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .project-link {
@@ -262,6 +340,7 @@
             display: flex;
             justify-content: center;
             gap: 40px;
+            flex-wrap: wrap;
         }
 
         .contact-link {
@@ -277,7 +356,6 @@
             opacity: 0.6;
         }
 
-        /* Footer */
         footer {
             padding: 60px 0;
             border-top: 1px solid #e0e0e0;
@@ -310,8 +388,16 @@
                 gap: 20px;
             }
 
+            .experience-header {
+                flex-direction: column;
+            }
+
             section {
                 padding: 60px 0;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -324,6 +410,7 @@
                 <div class="logo">HC</div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -337,6 +424,7 @@
             <h1>Hi, I'm <strong>Hardhiq Choudhary</strong><br>Computer Science Graduate Student</h1>
             <p>MS CS at George Washington University | Ex-Senior Analyst at AON | Building innovative solutions with Python, Swift, and data analytics</p>
             <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="https://www.linkedin.com/in/hardhiq-choudhary" target="_blank" class="cta-button secondary">LinkedIn</a>
         </div>
     </section>
 
@@ -345,30 +433,82 @@
         <div class="container">
             <div class="section-title">About Me</div>
             <div class="about-content">
+                <div>
+                    <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="profile-image">
+                </div>
                 <div class="about-text">
                     <h2>Developer & Data Analyst</h2>
-                    <p>Currently pursuing MS in Computer Science at George Washington University (2025-2027), with over 3 years of experience as a Senior Configuration Analyst at AON Consulting.</p>
-                    <p>I specialize in building data-driven solutions, optimizing ETL pipelines, and creating user-focused applications. Passionate about leveraging technology to solve real-world problems.</p>
-                    <p>Seeking Summer 2026 internships in Data Analytics, Software Engineering, and related fields.</p>
+                    <p>Currently pursuing MS in Computer Science at George Washington University (2025-2027), with over 4 years of experience spanning data analytics, ETL pipeline optimization, and software development.</p>
+                    <p>At AON Consulting, I led the migration of 4,400+ ETL reports and achieved a 90% runtime reduction on critical data processing workflows. I specialize in building data-driven solutions, automating complex processes, and creating user-focused applications.</p>
+                    <p><strong>Actively seeking Summer 2026 internships</strong> in Data Analytics, Software Engineering, and Machine Learning roles.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-item">
+                            <h3>Languages</h3>
+                            <p>Python, SQL, Swift, Java</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Data & Analytics</h3>
+                            <p>pandas, NumPy, Power BI, Tableau, Excel</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Development</h3>
+                            <p>SwiftUI, Firebase, REST APIs, Git, Docker</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Data Engineering</h3>
+                            <p>ETL Pipelines, SQL Server, MySQL, Actian DataConnect</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills">
-                    <div class="skill-item">
-                        <h3>Languages</h3>
-                        <p>Python, SQL, Swift, Java</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Data & ML</h3>
-                        <p>pandas, scikit-learn, SQL Server, Power BI, Tableau</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Development</h3>
-                        <p>SwiftUI, Firebase, Flask, Git, REST APIs</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Tools</h3>
-                        <p>VS Code, Jupyter, PostgreSQL, SSIS</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">Work Experience</div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>AON Consulting</h3>
+                    <span class="date">Aug 2021 – Aug 2025</span>
                 </div>
+                <div class="company-role">Senior Configuration Analyst – Health | Gurugram, India</div>
+                <ul>
+                    <li>Built and optimized ETL pipelines using Microsoft SQL Server and Actian DataConnect to convert raw healthcare data into client-specific output formats, processing 50,000+ monthly records</li>
+                    <li>Led migration of 4,400+ ETL reports to new data integration platform, streamlining conversion processes and improving system efficiency</li>
+                    <li>Optimized ETL workflows achieving <strong>90% runtime reduction</strong> (from 13 hours to 1.5 hours) by implementing targeted field comparison approach, replacing full dataset analysis and significantly reducing computational overhead</li>
+                    <li>Automated employee lifecycle data workflows (new hires, terminations, rehires, marital status changes, dependent additions) using Python (Pandas, NumPy), reducing manual processing time by 40% and minimizing data inconsistencies</li>
+                    <li>Developed Power BI dashboards and conducted exploratory data analysis to deliver actionable insights on enrollment trends and coverage utilization, identifying data anomalies that prevented $200K+ in annual claim discrepancies</li>
+                    <li>Received multiple performance awards including Aon Stars Award and Gold Team Award for exceptional client service and technical innovation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Wipro Limited</h3>
+                    <span class="date">Mar 2021 – Aug 2021</span>
+                </div>
+                <div class="company-role">Data Analytics Intern | Gurugram, India</div>
+                <ul>
+                    <li>Developed and optimized SQL queries to address diverse project requirements, ensuring data accuracy and efficiency across multiple datasets</li>
+                    <li>Implemented ETL tools and shell scripting to generate automated output files aligned with specified client requirements</li>
+                    <li>Collaborated with cross-functional teams to analyze data patterns and deliver insights supporting business decision-making</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>George Washington University</h3>
+                    <span class="date">Sep 2025 – Present</span>
+                </div>
+                <div class="company-role">Student Events Assistant I | Washington, D.C.</div>
+                <ul>
+                    <li>Coordinate and support campus events, ensuring smooth operations and positive attendee experiences</li>
+                    <li>Collaborate with university departments to manage event logistics, setup, and post-event breakdown</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -382,14 +522,16 @@
                 <div class="project-content">
                     <div class="project-info">
                         <h3>OurNews - iOS Social News App</h3>
-                        <p>Comprehensive iOS social news application built with SwiftUI featuring user profiles, real-time updates, article sharing, and group functionality with Firebase backend integration.</p>
+                        <p>Comprehensive iOS social news application built with SwiftUI featuring user profiles, real-time updates, article sharing, and group functionality. Integrated NLP-powered keyword extraction and Firebase backend for seamless real-time synchronization.</p>
                         <div class="project-tags">
                             <span class="tag">SwiftUI</span>
                             <span class="tag">Firebase</span>
                             <span class="tag">iOS</span>
                             <span class="tag">Real-Time</span>
+                            <span class="tag">NLP</span>
                         </div>
                         <div class="project-links">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7407559068258562049" class="project-link" target="_blank">Watch Demo Video</a>
                             <a href="https://github.com/hardhiqchoudhary-arch/OurNews-iOS" class="project-link" target="_blank">View Code</a>
                         </div>
                     </div>
@@ -400,16 +542,33 @@
             <div class="project">
                 <div class="project-content">
                     <div class="project-info">
-                        <h3>ETL Pipeline Optimization</h3>
-                        <p>Led optimization of healthcare data processing pipeline at AON, achieving 90% runtime improvement on 4,400+ reports. Implemented automated validation systems reducing errors by 85%.</p>
+                        <h3>ETL Pipeline Optimization at AON</h3>
+                        <p>Led optimization of healthcare data processing pipeline, achieving 90% runtime improvement on 4,400+ reports. Implemented automated validation systems reducing errors by 85% and ensuring accurate data delivery within SLA requirements.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">SQL Server</span>
-                            <span class="tag">SSIS</span>
+                            <span class="tag">ETL</span>
                             <span class="tag">Power BI</span>
+                            <span class="tag">Automation</span>
                         </div>
                     </div>
                     <div class="project-image">📊</div>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-content">
+                    <div class="project-info">
+                        <h3>COVID-19 Analytics Dashboard</h3>
+                        <p>Built interactive Power BI dashboard visualizing global COVID-19 data from WHO, enabling real-time monitoring of cases, deaths, and pandemic impact. Transformed large-scale datasets using DAX formulas and statistical methods to ensure data integrity.</p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-image">🌍</div>
                 </div>
             </div>
         </div>
@@ -421,7 +580,7 @@
             <div class="section-title">Get In Touch</div>
             <div class="contact-content">
                 <h2>Let's Work Together</h2>
-                <p>I'm currently seeking Summer 2026 internship opportunities in Data Analytics and Software Engineering. Feel free to reach out!</p>
+                <p>I'm actively seeking Summer 2026 internship opportunities in Data Analytics, Software Engineering, and Machine Learning. Feel free to reach out!</p>
                 <div class="contact-links">
                     <a href="mailto:hardhiq.choudhary@gwmail.gwu.edu" class="contact-link">Email</a>
                     <a href="https://linkedin.com/in/hardhiq-choudhary" class="contact-link" target="_blank">LinkedIn</a>
