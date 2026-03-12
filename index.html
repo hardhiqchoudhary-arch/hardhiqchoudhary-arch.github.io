@@ -1,673 +1,997 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardhiq Choudhary - Developer Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        header {
-            padding: 40px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.6;
-        }
-
-        /* Hero Section with Circle Photo */
-        .hero {
-            padding: 120px 0;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-image {
-            width: 250px;
-            height: 250px;
-        }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #1a1a1a;
-        }
-
-        .hero-text h1 {
-            font-size: 72px;
-            font-weight: 300;
-            letter-spacing: -2px;
-            margin-bottom: 30px;
-            line-height: 1.1;
-        }
-
-        .hero-text h1 strong {
-            font-weight: 600;
-        }
-
-        .hero-text p {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 50px;
-            background: #1a1a1a;
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            transition: background 0.3s;
-            border: none;
-            margin-right: 20px;
-            margin-bottom: 10px;
-        }
-
-        .cta-button:hover {
-            background: #333;
-        }
-
-        .cta-button.secondary {
-            background: #fff;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-        }
-
-        .cta-button.secondary:hover {
-            background: #f5f5f5;
-        }
-
-        section {
-            padding: 100px 0;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .section-title {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 60px;
-            color: #999;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 900px;
-        }
-
-        .about-text h2 {
-            font-size: 42px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
-        }
-
-        .about-text p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .skill-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .skill-item h3 {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .skill-item p {
-            font-size: 14px;
-            color: #999;
-        }
-
-        /* Experience Section with Company Logos */
-        .experience-item {
-            margin-bottom: 80px;
-            padding-bottom: 80px;
-            border-bottom: 1px solid #e0e0e0;
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .company-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #e0e0e0;
-        }
-
-        .experience-details {
-            flex: 1;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .experience-header h3 {
-            font-size: 28px;
-            font-weight: 300;
-            letter-spacing: -1px;
-        }
-
-        .experience-header .date {
-            font-size: 14px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .company-role {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .experience-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .experience-item li {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .experience-item li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1a1a1a;
-        }
-
-        /* Projects Section with Circle Images */
-        .project {
-            margin-bottom: 100px;
-        }
-
-        .project:last-child {
-            margin-bottom: 0;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .project-info h3 {
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .project-info p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .tag {
-            padding: 8px 20px;
-            border: 1px solid #e0e0e0;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .project-link {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 2px;
-            transition: opacity 0.3s;
-        }
-
-        .project-link:hover {
-            opacity: 0.6;
-        }
-
-        .project-image-wrapper {
-            width: 300px;
-            height: 300px;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #e0e0e0;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-content h2 {
-            font-size: 48px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
-        }
-
-        .contact-content p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.3s;
-        }
-
-        .contact-link:hover {
-            opacity: 0.6;
-        }
-
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid #e0e0e0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 12px;
-            color: #999;
-            letter-spacing: 1px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .hero-image {
-                margin: 0 auto;
-            }
-
-            .hero-text h1 {
-                font-size: 42px;
-            }
-
-            .project-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .project-image-wrapper {
-                margin: 0 auto;
-            }
-
-            .experience-item {
-                grid-template-columns: 1fr;
-            }
-
-            .company-logo {
-                margin: 0 auto;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardhiq Choudhary — Data Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #ffffff;
+      --off: #f8f7f5;
+      --black: #0e0e0e;
+      --mid: #5a5a5a;
+      --light: #b0b0b0;
+      --border: #e4e4e4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 2px; }
+    ::-webkit-scrollbar-thumb { background: var(--black); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 26px 64px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .nav-links { display: flex; gap: 48px; list-style: none; }
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-left {
+      padding: 160px 64px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 44px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 36px; height: 1px;
+      background: var(--light);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(60px, 6.5vw, 96px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      color: var(--black);
+      margin-bottom: 44px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--mid);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.85;
+      max-width: 480px;
+      margin-bottom: 48px;
+    }
+
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 56px;
+    }
+
+    .hero-tag {
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .hero-tag:hover { border-color: var(--black); color: var(--black); }
+
+    .hero-ctas { display: flex; gap: 14px; }
+
+    .btn-primary {
+      padding: 15px 40px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover { background: #333; }
+
+    .btn-ghost {
+      padding: 15px 36px;
+      border: 1px solid var(--border);
+      color: var(--black);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: border-color 0.3s;
+    }
+    .btn-ghost:hover { border-color: var(--black); }
+
+    /* ── HERO PHOTO ── */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: var(--off);
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: grayscale(8%) contrast(1.02);
+    }
+
+    /* Photo caption strip at bottom */
+    .hero-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 28px;
+      background: linear-gradient(transparent, rgba(255,255,255,0.9));
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* ── METRICS ── */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metric {
+      padding: 52px 40px;
+      border-right: 1px solid var(--border);
+    }
+    .metric:last-child { border-right: none; }
+
+    .metric-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 54px;
+      font-weight: 400;
+      color: var(--black);
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--light);
+      letter-spacing: 0.3px;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 100px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 72px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: var(--black);
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--light);
+      letter-spacing: 2px;
+    }
+
+    /* ── PROJECTS ── */
+    .project-item {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 60px;
+      align-items: start;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-item:last-child { border-bottom: none; }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .project-idx {
+      font-size: 10px;
+      color: var(--light);
+      letter-spacing: 2.5px;
+      font-weight: 400;
+    }
+
+    .project-badge {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid currentColor;
+    }
+
+    .badge-wip { color: #a07718; }
+    .badge-wip::before { content: '● '; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    .badge-done { color: var(--light); }
+
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--black);
+      margin-bottom: 20px;
+      line-height: 1.12;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .project-stack {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-bottom: 28px;
+    }
+
+    .stack-tag {
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--mid);
+    }
+
+    .project-links { display: flex; gap: 28px; align-items: center; }
+
+    .proj-link {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .proj-link:hover { opacity: 0.45; }
+
+    .proj-link-soft {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .proj-link-soft:hover { color: var(--black); }
+
+    .project-img-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--off);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(10%);
+      transition: transform 0.7s ease;
+    }
+    .project-item:hover .project-img { transform: scale(1.04); }
+
+    /* Play overlay for video projects */
+    .project-video-link {
+      display: block;
+      width: 100%; height: 100%;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(14,14,14,0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.35s ease;
+    }
+
+    .project-video-link:hover .play-overlay {
+      background: rgba(14,14,14,0.55);
+    }
+
+    .play-btn {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .play-btn svg { margin-left: 3px; }
+
+    .play-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: white;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+    }
+
+    .project-video-link:hover .play-btn,
+    .project-video-link:hover .play-label {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .project-video-link:hover .play-label {
+      transform: translateY(0);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 64px;
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-left { padding-top: 4px; }
+
+    .exp-logo {
+      width: 52px; height: 52px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      filter: grayscale(15%);
+    }
+
+    .exp-company {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+
+    .exp-company a { color: inherit; text-decoration: none; transition: opacity 0.2s; }
+    .exp-company a:hover { opacity: 0.45; }
+
+    .exp-date {
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 0.3px;
+      font-weight: 400;
+    }
+
+    .exp-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .exp-location {
+      font-size: 12px;
+      color: var(--light);
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+    .exp-bullets li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.85;
+      padding-left: 0;
+      position: relative;
+    }
+
+    .exp-bullets li strong { color: var(--black); font-weight: 500; }
+
+    /* Thin left-border accent for each bullet */
+    .exp-bullets li {
+      padding-left: 18px;
+      border-left: 1.5px solid var(--border);
+    }
+
+    /* ── SKILLS (elegant full-width) ── */
+    .skills-wrap { display: flex; flex-direction: column; gap: 0; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-row:last-child { border-bottom: none; }
+
+    .skill-cat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light);
+      padding-top: 4px;
+    }
+
+    .skill-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--mid);
+      letter-spacing: 0.3px;
+      transition: border-color 0.25s, color 0.25s, background 0.25s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--black);
+      color: var(--black);
+      background: var(--off);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-left {
+      padding: 100px 64px;
+      border-right: 1px solid var(--border);
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 5vw, 76px);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .contact-title em { font-style: italic; color: var(--mid); }
+
+    .contact-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.85;
+    }
+
+    .contact-right {
+      padding: 100px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-row:first-child { padding-top: 0; }
+    .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .contact-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .contact-val {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      letter-spacing: -0.2px;
+    }
+    .contact-val:hover { opacity: 0.45; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 28px 64px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    footer p { font-size: 11px; color: var(--light); letter-spacing: 0.3px; }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      nav { padding: 22px 32px; }
+      .hero { grid-template-columns: 1fr 320px; }
+      .hero-left { padding: 120px 40px 72px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 110px 32px 60px; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-right { height: 420px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: none; }
+      .metric:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+      .metric:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .section { padding: 64px 32px; }
+      .project-item { grid-template-columns: 1fr; }
+      .project-img-wrap { display: none; }
+      .exp-item { grid-template-columns: 1fr; gap: 24px; }
+      .skill-row { grid-template-columns: 1fr; gap: 16px; }
+      .contact-section { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 1px solid var(--border); padding: 64px 32px; }
+      .contact-right { padding: 64px 32px; }
+      footer { padding: 24px 32px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">HC</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">H C</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">MS CS · George Washington University</div>
+      <h1 class="hero-title">
+        Hardhiq<br>
+        <em>Choudhary</em>
+      </h1>
+      <p class="hero-desc">
+        Senior Data Engineer with 4+ years at AON Consulting — building ETL pipelines,
+        analytics systems, and full-stack applications that turn raw data into decisions.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">Python</span>
+        <span class="hero-tag">SQL</span>
+        <span class="hero-tag">Power BI</span>
+        <span class="hero-tag">Apache Airflow</span>
+        <span class="hero-tag">dbt</span>
+        <span class="hero-tag">ETL Pipelines</span>
+        <span class="hero-tag">SwiftUI</span>
+        <span class="hero-tag">Machine Learning</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Contact</a>
+        <a href="https://www.linkedin.com/in/hardhiq-choudhary" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+        <a href="https://github.com/hardhiqchoudhary-arch" target="_blank" class="btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="hero-photo">
+      <div class="hero-photo-caption">Arlington, VA · Available for Internships</div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <div class="metrics fade-in">
+    <div class="metric">
+      <div class="metric-number">50K+</div>
+      <div class="metric-label">Healthcare records<br>processed monthly</div>
+    </div>
+    <div class="metric">
+      <div class="metric-number">90%</div>
+      <div class="metric-label">Runtime reduction<br>achieved at AON</div>
+    </div>
+    <div class="metric">
+      <div class="metric-number">$200K+</div>
+      <div class="metric-label">Annual claim discrepancies<br>identified & prevented</div>
+    </div>
+    <div class="metric">
+      <div class="metric-number">4+</div>
+      <div class="metric-label">Years of professional<br>data engineering</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <div class="section-header">
+      <h2 class="section-title">Selected Projects</h2>
+      <span class="section-num">01 / 03</span>
+    </div>
+
+    <!-- Flight Price Pipeline — WIP, TOP -->
+    <div class="project-item fade-in">
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-idx">001</span>
+          <span class="project-badge badge-wip">Currently Building</span>
         </div>
-    </header>
-
-    <!-- Hero Section with Circle Photo -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="profile-photo">
-                </div>
-                <div class="hero-text">
-                    <h1>Hi, I'm <strong>Hardhiq Choudhary</strong><br>Computer Science Graduate Student</h1>
-                    <p>MS CS at George Washington University | Ex-Senior Analyst at AON | Building innovative solutions with Python, Swift, and data analytics</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
-                    <a href="https://www.linkedin.com/in/hardhiq-choudhary" target="_blank" class="cta-button secondary">LinkedIn</a>
-                </div>
-            </div>
+        <div class="project-name">Flight Price<br>Intelligence Pipeline</div>
+        <p class="project-desc">
+          End-to-end data engineering project ingesting live international flight pricing data via the Amadeus API, transforming it through automated dbt models and Apache Airflow DAGs, and surfacing predictive price insights through an XGBoost model and OpenAI-powered natural language summaries — all visualized in a Power BI dashboard.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Amadeus API</span>
+          <span class="stack-tag">dbt</span>
+          <span class="stack-tag">Apache Airflow</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Power BI</span>
+          <span class="stack-tag">XGBoost</span>
+          <span class="stack-tag">OpenAI API</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">About Me</div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Developer & Data Analyst</h2>
-                    <p>Currently pursuing MS in Computer Science at George Washington University (2025-2027), with over 4 years of experience spanning data analytics, ETL pipeline optimization, and software development.</p>
-                    <p>At AON Consulting, I led the migration of 4,400+ ETL reports and achieved a 90% runtime reduction on critical data processing workflows. I specialize in building data-driven solutions, automating complex processes, and creating user-focused applications.</p>
-                    <p><strong>Actively seeking Summer 2026 internships</strong> in Data Analytics, Software Engineering, and Machine Learning roles.</p>
-                    
-                    <div class="skills">
-                        <div class="skill-item">
-                            <h3>Languages</h3>
-                            <p>Python, SQL, Swift</p>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Data & Analytics</h3>
-                            <p>pandas, NumPy, Power BI, Tableau, Excel</p>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Development</h3>
-                            <p>SwiftUI, Firebase, REST APIs, Git, Docker</p>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Data Engineering</h3>
-                            <p>ETL Pipelines, SQL Server, MySQL, Actian DataConnect</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="project-links">
+          <a href="https://github.com/hardhiqchoudhary-arch/flight-price-pipeline" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437896423800573953" target="_blank" class="proj-link-soft">LinkedIn Post ↗</a>
         </div>
-    </section>
+      </div>
+      <div class="project-img-wrap">
+        <img src="ETL.png" alt="Flight Price Pipeline" class="project-img">
+      </div>
+    </div>
 
-    <!-- Experience Section with Company Logos -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-title">Work Experience</div>
-            
-            <div class="experience-item">
-                <img src="AON_PIC.jpg" alt="AON" class="company-logo">
-                <div class="experience-details">
-                    <div class="experience-header">
-                        <h3>AON Consulting</h3>
-                        <span class="date">Aug 2021 – Aug 2025</span>
-                    </div>
-                    <div class="company-role">Senior Configuration Analyst – Health | Gurugram, India</div>
-                    <ul>
-                        <li>Built and optimized ETL pipelines using Microsoft SQL Server and Actian DataConnect to convert raw healthcare data into client-specific output formats, processing 50,000+ monthly records</li>
-                        <li>Led migration of 4,400+ ETL reports to new data integration platform, streamlining conversion processes and improving system efficiency</li>
-                        <li>Optimized ETL workflows achieving <strong>90% runtime reduction</strong> (from 13 hours to 1.5 hours) by implementing targeted field comparison approach, replacing full dataset analysis and significantly reducing computational overhead</li>
-                        <li>Automated employee lifecycle data workflows (new hires, terminations, rehires, marital status changes, dependent additions) using Python (Pandas, NumPy), reducing manual processing time by 40% and minimizing data inconsistencies</li>
-                        <li>Developed Power BI dashboards and conducted exploratory data analysis to deliver actionable insights on enrollment trends and coverage utilization, identifying data anomalies that prevented $200K+ in annual claim discrepancies</li>
-                        <li>Received multiple performance awards including Aon Stars Award and Gold Team Award for exceptional client service and technical innovation</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <img src="Wipro.jpg" alt="Wipro" class="company-logo">
-                <div class="experience-details">
-                    <div class="experience-header">
-                        <h3>Wipro Limited</h3>
-                        <span class="date">Mar 2021 – Aug 2021</span>
-                    </div>
-                    <div class="company-role">Data Analytics Intern | Gurugram, India</div>
-                    <ul>
-                        <li>Developed and optimized SQL queries to address diverse project requirements, ensuring data accuracy and efficiency across multiple datasets</li>
-                        <li>Implemented ETL tools and shell scripting to generate automated output files aligned with specified client requirements</li>
-                        <li>Collaborated with cross-functional teams to analyze data patterns and deliver insights supporting business decision-making</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <img src="GWU_logo.png" alt="George Washington University" class="company-logo">
-                <div class="experience-details">
-                    <div class="experience-header">
-                        <h3>George Washington University</h3>
-                        <span class="date">Sep 2025 – Present</span>
-                    </div>
-                    <div class="company-role">Student Events Assistant I | Washington, D.C.</div>
-                    <ul>
-                        <li>Coordinate and support campus events, ensuring smooth operations and positive attendee experiences</li>
-                        <li>Collaborate with university departments to manage event logistics, setup, and post-event breakdown</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- OurNews -->
+    <div class="project-item fade-in">
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-idx">002</span>
+          <span class="project-badge badge-done">Dec 2025</span>
         </div>
-    </section>
-
-    <!-- Projects Section with Circle Images -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-title">Selected Projects</div>
-            
-            <div class="project">
-                <div class="project-content">
-                    <div class="project-info">
-                        <h3>OurNews - iOS Social News App</h3>
-                        <p>Comprehensive iOS social news application built with SwiftUI featuring user profiles, real-time updates, article sharing, and group functionality. Integrated NLP-powered keyword extraction and Firebase backend for seamless real-time synchronization.</p>
-                        <div class="project-tags">
-                            <span class="tag">SwiftUI</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">iOS</span>
-                            <span class="tag">Real-Time</span>
-                            <span class="tag">NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7407559068258562049" class="project-link" target="_blank">Watch Demo Video</a>
-                            <a href="https://github.com/hardhiqchoudhary-arch/OurNews-iOS" class="project-link" target="_blank">View Code</a>
-                        </div>
-                    </div>
-                    <div class="project-image-wrapper">
-                        <img src="Our_News.png" alt="OurNews App" class="project-image">
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-content">
-                    <div class="project-info">
-                        <h3>ETL Pipeline Optimization at AON</h3>
-                        <p>Led optimization of healthcare data processing pipeline, achieving 90% runtime improvement on 4,400+ reports. Implemented automated validation systems reducing errors by 85% and ensuring accurate data delivery within SLA requirements.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL Server</span>
-                            <span class="tag">ETL</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-                    <div class="project-image-wrapper">
-                        <img src="ETL.png" alt="ETL Pipeline" class="project-image">
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-content">
-                    <div class="project-info">
-                        <h3>COVID-19 Analytics Dashboard</h3>
-                        <p>Built interactive Power BI dashboard visualizing global COVID-19 data from WHO, enabling real-time monitoring of cases, deaths, and pandemic impact. Transformed large-scale datasets using DAX formulas and statistical methods to ensure data integrity.</p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">Analytics</span>
-                        </div>
-                    </div>
-                    <div class="project-image-wrapper">
-                        <img src="Covid_19.png" alt="COVID-19 Dashboard" class="project-image">
-                    </div>
-                </div>
-            </div>
+        <div class="project-name">OurNews —<br>Social News Platform</div>
+        <p class="project-desc">
+          Designed a real-time data ingestion pipeline aggregating news from multiple APIs into Firebase, handling deduplication, normalization, and structured NoSQL schema design optimized for read performance. Built an NLP keyword extraction and categorization pipeline using Apple's NaturalLanguage framework, enabling automated content tagging and data-driven personalized news recommendations at scale.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">SwiftUI</span>
+          <span class="stack-tag">Firebase</span>
+          <span class="stack-tag">iOS</span>
+          <span class="stack-tag">NLP</span>
+          <span class="stack-tag">Firestore</span>
+          <span class="stack-tag">Real-Time</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">Get In Touch</div>
-            <div class="contact-content">
-                <h2>Let's Work Together</h2>
-                <p>I'm actively seeking Summer 2026 internship opportunities in Data Analytics, Software Engineering, and Machine Learning. Feel free to reach out!</p>
-            <div class="contact-links">
-                <a href="tel:+12022103257" class="contact-link">Phone</a>
-                <a href="mailto:hardhiq.choudhary@gwmail.gwu.edu" class="contact-link">Email</a>
-                <a href="https://linkedin.com/in/hardhiq-choudhary" class="contact-link" target="_blank">LinkedIn</a>
-                <a href="https://github.com/hardhiqchoudhary-arch" class="contact-link" target="_blank">GitHub</a>
-                </div>
+        <div class="project-links">
+          <a href="https://github.com/hardhiqchoudhary-arch/OurNews-iOS" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7407559068258562049" target="_blank" class="proj-link-soft">Watch Demo ↗</a>
+        </div>
+      </div>
+      <div class="project-img-wrap">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7407559068258562049" target="_blank" class="project-video-link" title="Watch Demo Video">
+          <img src="ourNEW.png" alt="OurNews App Demo" class="project-img">
+          <div class="play-overlay">
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
             </div>
-        </div>
-    </section>
+            <span class="play-label">Watch Demo</span>
+          </div>
+        </a>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Hardhiq Choudhary. All rights reserved.</p>
+    <!-- COVID Dashboard -->
+    <div class="project-item fade-in">
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-idx">003</span>
+          <span class="project-badge badge-done">Completed</span>
         </div>
-    </footer>
-</body>
-</html>
+        <div class="project-name">COVID-19<br>Analytics Dashboard</div>
+        <p class="project-desc">
+          Built an interactive Power BI dashboard visualizing global COVID-19 data from WHO, enabling real-time monitoring of cases, deaths, and pandemic impact. Transformed large-scale datasets using DAX formulas and statistical methods to ensure data integrity.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">Power BI</span>
+          <span class="stack-tag">DAX</span>
+          <span class="stack-tag">Data Visualization</span>
+          <span class="stack-tag">Analytics</span>
+        </div>
+      </div>
+      <div class="project-img-wrap">
+        <img src="Covid_19.png" alt="COVID-19 Dashboard" class="project-img">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section" id="experience">
+    <div class="section-header">
+      <h2 class="section-title">Work Experience</h2>
+      <span class="section-num">02 / 03</span>
+    </div>
+
+    <!-- AON -->
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="AON_PIC.jpg" alt="AON" class="exp-logo">
+        <div class="exp-company"><a href="https://www.aon.com" target="_blank">AON Consulting</a></div>
+        <div class="exp-date">May 2021 — Aug 2025</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Senior Data Engineer</div>
+        <div class="exp-location">Gurugram, India</div>
+        <ul class="exp-bullets">
+          <li>Designed scalable ETL pipelines using <strong>SQL Server, Apache Airflow, and Salesforce APIs</strong>, processing <strong>50,000+ monthly healthcare records</strong> into client-specific formats across multiple environments.</li>
+          <li>Achieved <strong>90% runtime reduction</strong> (13 hrs → 1.5 hrs) by replacing full dataset scans with a targeted field comparison approach, significantly reducing computational overhead and infrastructure costs.</li>
+          <li>Developed <strong>30+ parameterized SQL queries</strong> using window functions, CTEs, and aggregate analytics to answer business questions about enrollment patterns, coverage gaps, and cost optimization.</li>
+          <li>Built <strong>Power BI dashboards</strong> identifying anomalies that prevented <strong>$200K+ in annual claim discrepancies</strong>; improved data accuracy by 35% and enabled leadership decision-making.</li>
+          <li>Collaborated with actuarial teams, account managers, and clients to translate business requirements into analytical solutions, delivering monthly insights reports.</li>
+          <li>Received <strong>Aon Stars Award</strong> and <strong>Gold Team Award</strong> for exceptional client service and technical innovation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Wipro -->
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="Wipro.jpg" alt="Wipro" class="exp-logo">
+        <div class="exp-company"><a href="https://www.wipro.com" target="_blank">Wipro Limited</a></div>
+        <div class="exp-date">Mar 2021 — Aug 2021</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Data Analytics Intern</div>
+        <div class="exp-location">Gurugram, India</div>
+        <ul class="exp-bullets">
+          <li>Analyzed <strong>10,000+ monthly active users</strong> across client portals using SQL and statistical analysis to track feature adoption, engagement patterns, and product usage metrics.</li>
+          <li>Designed <strong>Power BI and Tableau dashboards</strong> consolidating user activity and predictive churn indicators; conducted A/B testing and cohort analysis identifying engagement drivers contributing to <strong>$500K+ revenue opportunities</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GWU -->
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
+        <div class="exp-company">George Washington University</div>
+        <div class="exp-date">Sep 2025 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Student Events Assistant</div>
+        <div class="exp-location">Washington, D.C.</div>
+        <ul class="exp-bullets">
+          <li>Coordinate and support campus events, ensuring smooth operations and positive attendee experiences.</li>
+          <li>Collaborate with university departments to manage event logistics, setup, and post-event breakdown.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section" id="skills">
+    <div class="section-header">
+      <h2 class="section-title">Technical Skills</h2>
+      <span class="section-num">03 / 03</span>
+    </div>
+    <div class="skills-wrap fade-in">
+
+      <div class="skill-row">
+        <span class="skill-cat-label">Languages</span>
+        <div class="skill-tags-row">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Swift</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-cat-label">Data & Analytics</span>
+        <div class="skill-tags-row">
+          <span class="skill-tag">pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Excel</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-cat-label">Development</span>
+        <div class="skill-tags-row">
+          <span class="skill-tag">SwiftUI</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-cat-label">Data Engineering</span>
+        <div class="skill-tags-row">
+          <span class="skill-tag">ETL Pipelines</span>
+          <span class="skill-tag">dbt</span>
+          <span class="skill-tag">Apache Airflow</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Actian DataConnect</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-cat-label">Machine Learning</span>
+        <div class="skill-tags-row">
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">LightGBM</span>
+          <span class="skill-tag">OpenAI API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-left">
+      <h2 class="contact-title">Let's<br><em>connect.</em></h2>
+      <p class="contact-sub">Open to opportunities in Data Engineering,<br>Analytics, and Software Engineering.</p>
+    </div>
+    <div class="contact-right">
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a href="/cdn-cgi/l/email-protection#5c343d2e3834352d723f34332938343d2e251c3b2b313d3530723b2b2972393829" class="contact-val"><span class="__cf_email__" data-cfemail="f29a9380969a9b83dc919a9d87969a93808bb295859f939b9edc958587dc979687">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://linkedin.com/in/hardhiq-choudhary" target="_blank" class="contact-val">linkedin.com/in/hardhiq-choudhary</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">GitHub</span>
+        <a href="https://github.com/hardhiqchoudhary-arch" target="_blank" class="contact-val">github.com/hardhiqchoudhary-arch</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Phone</span>
+        <a href="tel:+12022103257" class="contact-val">+1 202-210-3257</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">H C</span>
+    <p>© 2026 Hardhiq Choudhary · Arlington, VA</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach
