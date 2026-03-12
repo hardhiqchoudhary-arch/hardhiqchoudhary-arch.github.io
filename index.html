@@ -170,6 +170,21 @@
       position: relative;
       overflow: hidden;
       background: var(--off);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+    }
+
+    .hero-photo-circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      margin-bottom: 24px;
+      flex-shrink: 0;
     }
 
     .hero-photo {
@@ -183,15 +198,12 @@
 
     /* Photo caption strip at bottom */
     .hero-photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 20px 28px;
-      background: linear-gradient(transparent, rgba(255,255,255,0.9));
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--mid);
+      color: var(--light);
+      text-align: center;
     }
 
     /* ── METRICS ── */
@@ -635,8 +647,7 @@
     footer p { font-size: 11px; color: var(--light); letter-spacing: 0.3px; }
 
     /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in { transform: translateY(18px); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
@@ -707,7 +718,9 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="hero-photo">
+      <div class="hero-photo-circle">
+        <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="hero-photo">
+      </div>
       <div class="hero-photo-caption">Arlington, VA · Available for Internships</div>
     </div>
   </section>
@@ -993,5 +1006,21 @@
   </footer>
 
   <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach
+    const fadeEls = document.querySelectorAll('.fade-in');
+    fadeEls.forEach(el => { el.style.opacity = '0'; });
+
+    function revealOnScroll() {
+      fadeEls.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40) {
+          el.style.transition = 'opacity 0.6s ease ' + (i % 5) * 0.08 + 's, transform 0.6s ease ' + (i % 5) * 0.08 + 's';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+  </script>
+</body>
+</html>
