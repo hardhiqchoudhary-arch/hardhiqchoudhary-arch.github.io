@@ -170,7 +170,6 @@
       position: relative;
       overflow: hidden;
       background: var(--white);
-      border-left: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -562,6 +561,25 @@
     }
 
     /* ── SUPPORTING MATERIALS ── */
+    .sub-block {
+      padding: 0 64px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sub-block-header {
+      margin-bottom: 8px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sub-block-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
     .materials-grid { display: flex; flex-direction: column; gap: 0; }
 
     .material-card {
@@ -734,6 +752,7 @@
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#volunteering">Volunteering</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -771,7 +790,6 @@
       <div class="hero-photo-circle">
         <img src="My_Photo.jpg" alt="Hardhiq Choudhary" class="hero-photo">
       </div>
-      <div class="hero-photo-caption">Arlington, VA · Available for Internships</div>
     </div>
   </section>
 
@@ -799,7 +817,7 @@
   <div class="section" id="experience">
     <div class="section-header">
       <h2 class="section-title">Work Experience</h2>
-      <span class="section-num">02 / 03</span>
+      <span class="section-num">01</span>
     </div>
 
     <!-- AON -->
@@ -840,56 +858,12 @@
       </div>
     </div>
 
-  </div>
 
-  <!-- VOLUNTEERING -->
-  <div class="section" id="volunteering">
-    <div class="section-header">
-      <h2 class="section-title">Volunteering &amp; Campus</h2>
-      <span class="section-num">GWU · 2025–Present</span>
+  <!-- SUPPORTING MATERIALS (inline in Experience) -->
+  <div class="sub-block">
+    <div class="sub-block-header">
+      <span class="sub-block-label">Supporting Documents — AON Consulting</span>
     </div>
-
-    <div class="exp-item fade-in">
-      <div class="exp-left">
-        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
-        <div class="exp-company">George Washington University</div>
-        <div class="exp-date">Sep 2025 — Present</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Student Events Assistant I</div>
-        <div class="exp-location">Washington, D.C.</div>
-        <ul class="exp-bullets">
-          <li>Assisted in physically setting up event venues, managing registration desks, directing attendees, and coordinating with campus operations staff to ensure smooth event execution.</li>
-          <li>Automated repetitive data entry using <strong>Python scripts</strong> and maintained Excel tracking sheets for attendance, volunteer hours, and resource allocation, reducing manual reporting effort.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item fade-in">
-      <div class="exp-left">
-        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
-        <div class="exp-company">George Washington University</div>
-        <div class="exp-date">Sep 2025 — Present</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Student Athletics Assistant I</div>
-        <div class="exp-location">Washington, D.C.</div>
-        <ul class="exp-bullets">
-          <li>Supported game-day operations by managing equipment setup, assisting with athlete check-ins, and coordinating facility logistics and on-ground support for coaching and administrative staff.</li>
-          <li>Developed <strong>Python scripts</strong> to organize and process athlete participation data, enabling faster reporting and reducing manual data handling for the athletics department.</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SUPPORTING MATERIALS -->
-  <div class="section" id="materials">
-    <div class="section-header">
-      <h2 class="section-title">Supporting Materials</h2>
-      <span class="section-num">Awards &amp; Recognition</span>
-    </div>
-
     <div class="materials-grid fade-in">
 
       <a href="Letter_Of_Recommendation_-_Manish_M.pdf" target="_blank" class="material-card">
@@ -929,7 +903,7 @@
   <div class="section" id="projects">
     <div class="section-header">
       <h2 class="section-title">Selected Projects</h2>
-      <span class="section-num">01 / 03</span>
+      <span class="section-num">02</span>
     </div>
 
     <!-- Flight Price Pipeline — WIP, TOP -->
@@ -1022,11 +996,52 @@
 
   </div>
 
+  <!-- VOLUNTEERING -->
+  <div class="section" id="volunteering">
+    <div class="section-header">
+      <h2 class="section-title">Volunteering &amp; Campus</h2>
+      <span class="section-num">03</span>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
+        <div class="exp-company">George Washington University</div>
+        <div class="exp-date">Sep 2025 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Student Events Assistant I</div>
+        <div class="exp-location">Washington, D.C.</div>
+        <ul class="exp-bullets">
+          <li>Assisted in physically setting up event venues, managing registration desks, directing attendees, and coordinating with campus operations staff to ensure smooth event execution.</li>
+          <li>Automated repetitive data entry using <strong>Python scripts</strong> and maintained Excel tracking sheets for attendance, volunteer hours, and resource allocation, reducing manual reporting effort.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
+        <div class="exp-company">George Washington University</div>
+        <div class="exp-date">Sep 2025 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Student Athletics Assistant I</div>
+        <div class="exp-location">Washington, D.C.</div>
+        <ul class="exp-bullets">
+          <li>Supported game-day operations by managing equipment setup, assisting with athlete check-ins, and coordinating facility logistics and on-ground support for coaching and administrative staff.</li>
+          <li>Developed <strong>Python scripts</strong> to organize and process athlete participation data, enabling faster reporting and reducing manual data handling for the athletics department.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
   <!-- SKILLS -->
   <div class="section" id="skills">
     <div class="section-header">
       <h2 class="section-title">Technical Skills</h2>
-      <span class="section-num">03 / 03</span>
+      <span class="section-num">04</span>
     </div>
     <div class="skills-wrap fade-in">
 
@@ -1118,12 +1133,21 @@
     <p>© 2026 Hardhiq Choudhary · Arlington, VA</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     fadeEls.forEach(el => { el.style.opacity = '0'; });
-
     function revealOnScroll() {
       fadeEls.forEach((el, i) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 40) {
-          el.style.transition = 'opacity 0.6s ease ' + (i % 5) * 0.08 + 's, transfor
+          el.style.transition = 'opacity 0.6s ease ' + (i % 5) * 0.08 + 's, transform 0.6s ease ' + (i % 5) * 0.08 + 's';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+  </script>
+</body>
+</html>
