@@ -169,7 +169,8 @@
     .hero-right {
       position: relative;
       overflow: hidden;
-      background: var(--off);
+      background: var(--white);
+      border-left: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -560,6 +561,55 @@
       background: var(--off);
     }
 
+    /* ── SUPPORTING MATERIALS ── */
+    .materials-grid { display: flex; flex-direction: column; gap: 0; }
+
+    .material-card {
+      display: grid;
+      grid-template-columns: 48px 1fr 24px;
+      gap: 24px;
+      align-items: center;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .material-card:last-child { border-bottom: none; }
+    .material-card:hover { background: var(--off); margin: 0 -16px; padding: 32px 16px; }
+
+    .material-icon { font-size: 28px; text-align: center; }
+
+    .material-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .material-sub {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 8px;
+    }
+
+    .material-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .material-arrow {
+      font-size: 18px;
+      color: var(--light);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .material-card:hover .material-arrow { color: var(--black); transform: translate(2px, -2px); }
+
     /* ── CONTACT ── */
     .contact-section {
       display: grid;
@@ -682,8 +732,8 @@
   <nav>
     <div class="nav-logo">H C</div>
     <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -745,6 +795,136 @@
     </div>
   </div>
 
+  <!-- EXPERIENCE -->
+  <div class="section" id="experience">
+    <div class="section-header">
+      <h2 class="section-title">Work Experience</h2>
+      <span class="section-num">02 / 03</span>
+    </div>
+
+    <!-- AON -->
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="AON_PIC.jpg" alt="AON" class="exp-logo">
+        <div class="exp-company"><a href="https://www.aon.com" target="_blank">AON Consulting</a></div>
+        <div class="exp-date">May 2021 — Aug 2025</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Senior Data Engineer</div>
+        <div class="exp-location">Gurugram, India</div>
+        <ul class="exp-bullets">
+          <li>Designed scalable ETL pipelines using <strong>SQL Server, Apache Airflow, and Salesforce APIs</strong>, processing <strong>50,000+ monthly healthcare records</strong> into client-specific formats across multiple environments.</li>
+          <li>Achieved <strong>90% runtime reduction</strong> (13 hrs → 1.5 hrs) by replacing full dataset scans with a targeted field comparison approach, significantly reducing computational overhead and infrastructure costs.</li>
+          <li>Developed <strong>30+ parameterized SQL queries</strong> using window functions, CTEs, and aggregate analytics to answer business questions about enrollment patterns, coverage gaps, and cost optimization.</li>
+          <li>Built <strong>Power BI dashboards</strong> identifying anomalies that prevented <strong>$200K+ in annual claim discrepancies</strong>; improved data accuracy by 35% and enabled leadership decision-making.</li>
+          <li>Collaborated with actuarial teams, account managers, and clients to translate business requirements into analytical solutions, delivering monthly insights reports.</li>
+          <li>Received <strong>Aon Stars Award</strong> and <strong>Gold Team Award</strong> for exceptional client service and technical innovation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Wipro -->
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="Wipro.jpg" alt="Wipro" class="exp-logo">
+        <div class="exp-company"><a href="https://www.wipro.com" target="_blank">Wipro Limited</a></div>
+        <div class="exp-date">Mar 2021 — Aug 2021</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Data Analytics Intern</div>
+        <div class="exp-location">Gurugram, India</div>
+        <ul class="exp-bullets">
+          <li>Analyzed <strong>10,000+ monthly active users</strong> across client portals using SQL and statistical analysis to track feature adoption, engagement patterns, and product usage metrics.</li>
+          <li>Designed <strong>Power BI and Tableau dashboards</strong> consolidating user activity and predictive churn indicators; conducted A/B testing and cohort analysis identifying engagement drivers contributing to <strong>$500K+ revenue opportunities</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VOLUNTEERING -->
+  <div class="section" id="volunteering">
+    <div class="section-header">
+      <h2 class="section-title">Volunteering &amp; Campus</h2>
+      <span class="section-num">GWU · 2025–Present</span>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
+        <div class="exp-company">George Washington University</div>
+        <div class="exp-date">Sep 2025 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Student Events Assistant I</div>
+        <div class="exp-location">Washington, D.C.</div>
+        <ul class="exp-bullets">
+          <li>Assisted in physically setting up event venues, managing registration desks, directing attendees, and coordinating with campus operations staff to ensure smooth event execution.</li>
+          <li>Automated repetitive data entry using <strong>Python scripts</strong> and maintained Excel tracking sheets for attendance, volunteer hours, and resource allocation, reducing manual reporting effort.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-left">
+        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
+        <div class="exp-company">George Washington University</div>
+        <div class="exp-date">Sep 2025 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Student Athletics Assistant I</div>
+        <div class="exp-location">Washington, D.C.</div>
+        <ul class="exp-bullets">
+          <li>Supported game-day operations by managing equipment setup, assisting with athlete check-ins, and coordinating facility logistics and on-ground support for coaching and administrative staff.</li>
+          <li>Developed <strong>Python scripts</strong> to organize and process athlete participation data, enabling faster reporting and reducing manual data handling for the athletics department.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUPPORTING MATERIALS -->
+  <div class="section" id="materials">
+    <div class="section-header">
+      <h2 class="section-title">Supporting Materials</h2>
+      <span class="section-num">Awards &amp; Recognition</span>
+    </div>
+
+    <div class="materials-grid fade-in">
+
+      <a href="Letter_Of_Recommendation_-_Manish_M.pdf" target="_blank" class="material-card">
+        <div class="material-icon">📄</div>
+        <div class="material-info">
+          <div class="material-title">Letter of Recommendation</div>
+          <div class="material-sub">Manish M. · IND Senior Manager, AON Consulting · Oct 2024</div>
+          <div class="material-desc">Recommendation highlighting expertise in ETL automation, SQL, Data Connect, client collaboration with Accenture, J&amp;J, NTT Data, and Alcon — and mentorship of junior engineers.</div>
+        </div>
+        <div class="material-arrow">↗</div>
+      </a>
+
+      <a href="SILVER_AWARD.pdf" target="_blank" class="material-card">
+        <div class="material-icon">🥈</div>
+        <div class="material-info">
+          <div class="material-title">Aon Stars — Silver Award</div>
+          <div class="material-sub">AON Consulting · January 31, 2024</div>
+          <div class="material-desc">Presented by Head of Shared Operations for demonstrating Aon values and consistently delivering exceptional results.</div>
+        </div>
+        <div class="material-arrow">↗</div>
+      </a>
+
+      <a href="SILVER_AWARD_2.pdf" target="_blank" class="material-card">
+        <div class="material-icon">🥈</div>
+        <div class="material-info">
+          <div class="material-title">Aon Stars — Silver Award</div>
+          <div class="material-sub">AON Consulting · November 1, 2023</div>
+          <div class="material-desc">Presented by Head of Shared Operations for demonstrating Aon values and delivering results across client projects.</div>
+        </div>
+        <div class="material-arrow">↗</div>
+      </a>
+
+    </div>
+  </div>
+
   <!-- PROJECTS -->
   <div class="section" id="projects">
     <div class="section-header">
@@ -777,9 +957,6 @@
           <a href="https://github.com/hardhiqchoudhary-arch/flight-price-pipeline" target="_blank" class="proj-link">GitHub ↗</a>
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437896423800573953" target="_blank" class="proj-link-soft">LinkedIn Post ↗</a>
         </div>
-      </div>
-      <div class="project-img-wrap">
-        <img src="ETL.png" alt="Flight Price Pipeline" class="project-img">
       </div>
     </div>
 
@@ -840,70 +1017,6 @@
       </div>
       <div class="project-img-wrap">
         <img src="Covid_19.png" alt="COVID-19 Dashboard" class="project-img">
-      </div>
-    </div>
-
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="section" id="experience">
-    <div class="section-header">
-      <h2 class="section-title">Work Experience</h2>
-      <span class="section-num">02 / 03</span>
-    </div>
-
-    <!-- AON -->
-    <div class="exp-item fade-in">
-      <div class="exp-left">
-        <img src="AON_PIC.jpg" alt="AON" class="exp-logo">
-        <div class="exp-company"><a href="https://www.aon.com" target="_blank">AON Consulting</a></div>
-        <div class="exp-date">May 2021 — Aug 2025</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Senior Data Engineer</div>
-        <div class="exp-location">Gurugram, India</div>
-        <ul class="exp-bullets">
-          <li>Designed scalable ETL pipelines using <strong>SQL Server, Apache Airflow, and Salesforce APIs</strong>, processing <strong>50,000+ monthly healthcare records</strong> into client-specific formats across multiple environments.</li>
-          <li>Achieved <strong>90% runtime reduction</strong> (13 hrs → 1.5 hrs) by replacing full dataset scans with a targeted field comparison approach, significantly reducing computational overhead and infrastructure costs.</li>
-          <li>Developed <strong>30+ parameterized SQL queries</strong> using window functions, CTEs, and aggregate analytics to answer business questions about enrollment patterns, coverage gaps, and cost optimization.</li>
-          <li>Built <strong>Power BI dashboards</strong> identifying anomalies that prevented <strong>$200K+ in annual claim discrepancies</strong>; improved data accuracy by 35% and enabled leadership decision-making.</li>
-          <li>Collaborated with actuarial teams, account managers, and clients to translate business requirements into analytical solutions, delivering monthly insights reports.</li>
-          <li>Received <strong>Aon Stars Award</strong> and <strong>Gold Team Award</strong> for exceptional client service and technical innovation.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Wipro -->
-    <div class="exp-item fade-in">
-      <div class="exp-left">
-        <img src="Wipro.jpg" alt="Wipro" class="exp-logo">
-        <div class="exp-company"><a href="https://www.wipro.com" target="_blank">Wipro Limited</a></div>
-        <div class="exp-date">Mar 2021 — Aug 2021</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Data Analytics Intern</div>
-        <div class="exp-location">Gurugram, India</div>
-        <ul class="exp-bullets">
-          <li>Analyzed <strong>10,000+ monthly active users</strong> across client portals using SQL and statistical analysis to track feature adoption, engagement patterns, and product usage metrics.</li>
-          <li>Designed <strong>Power BI and Tableau dashboards</strong> consolidating user activity and predictive churn indicators; conducted A/B testing and cohort analysis identifying engagement drivers contributing to <strong>$500K+ revenue opportunities</strong>.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- GWU -->
-    <div class="exp-item fade-in">
-      <div class="exp-left">
-        <img src="GWU_logo.png" alt="GWU" class="exp-logo">
-        <div class="exp-company">George Washington University</div>
-        <div class="exp-date">Sep 2025 — Present</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Student Events Assistant</div>
-        <div class="exp-location">Washington, D.C.</div>
-        <ul class="exp-bullets">
-          <li>Coordinate and support campus events, ensuring smooth operations and positive attendee experiences.</li>
-          <li>Collaborate with university departments to manage event logistics, setup, and post-event breakdown.</li>
-        </ul>
       </div>
     </div>
 
@@ -982,7 +1095,7 @@
     <div class="contact-right">
       <div class="contact-row">
         <span class="contact-label">Email</span>
-        <a href="mailto:hardhiq.choudhary@gwmail.gwu.edu" class="contact-val">hardhiq.choudhary@gwmail.gwu.edu</a>
+        <a href="/cdn-cgi/l/email-protection#d5bdb4a7b1bdbca4fbb6bdbaa0b1bdb4a7ac95b2a2b8b4bcb9fbb2a2a0fbb0b1a0" class="contact-val"><span class="__cf_email__" data-cfemail="89e1e8fbede1e0f8a7eae1e6fcede1e8fbf0c9eefee4e8e0e5a7eefefca7ecedfc">[email&#160;protected]</span></a>
       </div>
       <div class="contact-row">
         <span class="contact-label">LinkedIn</span>
@@ -1005,7 +1118,7 @@
     <p>© 2026 Hardhiq Choudhary · Arlington, VA</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const fadeEls = document.querySelectorAll('.fade-in');
     fadeEls.forEach(el => { el.style.opacity = '0'; });
 
@@ -1013,14 +1126,4 @@
       fadeEls.forEach((el, i) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 40) {
-          el.style.transition = 'opacity 0.6s ease ' + (i % 5) * 0.08 + 's, transform 0.6s ease ' + (i % 5) * 0.08 + 's';
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }
-      });
-    }
-    revealOnScroll();
-    window.addEventListener('scroll', revealOnScroll, { passive: true });
-  </script>
-</body>
-</html>
+          el.style.transition = 'opacity 0.6s ease ' + (i % 5) * 0.08 + 's, transfor
